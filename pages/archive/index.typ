@@ -15,8 +15,8 @@
 ]
 
 #show: template-page.with(
-  title: "更新",
-  description: "更新页面",
+  title: "归档",
+  description: "魔符sigil 的文字归档，按年份回看学习与实践。",
 )
 
 #render-page-breadcrumb(items: (("/", "首页"),))

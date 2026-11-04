@@ -1,0 +1,31 @@
+name: Build personal blog
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: typst-community/setup-typst@v4
+        with:
+          typst-version: '0.15.1'
+      - run: npm ci
+      - run: npm run build:fast
+      - run: npm run check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mofusigil-blog
+          path: _site
+          retention-days: 7

@@ -3,3 +3,9 @@ _site-preview/
 .vscode/
 .typ-blog-cache/
 node_modules/
+.tools/
+.env
+.env.*
+.aws/
+.codex/
+.agents/

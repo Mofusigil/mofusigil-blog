@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://tiger2005.top/rss.xml

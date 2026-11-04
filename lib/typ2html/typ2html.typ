@@ -13,7 +13,7 @@
 
 #let make-theme-preload-script() = html.script(
   type: "text/javascript",
-  "(function(){var key='typ-blog-theme';var theme=null;try{var stored=localStorage.getItem(key);if(stored==='gray-10'||stored==='gray-90'||stored==='gray-100'||stored==='white'){theme=stored;}}catch(_){ }if(!theme){theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'gray-90':'gray-10';}document.documentElement.setAttribute('data-theme',theme);var bg=theme==='gray-90'?'#262626':theme==='gray-100'?'#161616':theme==='white'?'#ffffff':'#f4f4f4';document.documentElement.style.backgroundColor=bg;})();",
+  "(function(){var t=null;try{t=localStorage.getItem('sigil-theme');}catch(e){}if(t!=='gray-10'&&t!=='gray-90')t=matchMedia('(prefers-color-scheme: dark)').matches?'gray-90':'gray-10';document.documentElement.setAttribute('data-theme',t);})();",
 )
 
 #let post-date-storage-format = "[year]-[month]-[day]"
@@ -147,10 +147,6 @@
             head-extra
           }
 
-          html.link(rel: "preconnect", href: "https://cdn.jsdelivr.net", crossorigin: "anonymous")
-          html.link(rel: "dns-prefetch", href: "https://cdn.jsdelivr.net")
-          html.link(rel: "preconnect", href: "https://events.vercount.one", crossorigin: "anonymous")
-          html.link(rel: "dns-prefetch", href: "https://events.vercount.one")
 
           make-theme-preload-script()
 
@@ -167,11 +163,7 @@
             html.script(type: "module", src: js-src)
           }
 
-          html.script(
-            defer: true,
-            type: "text/javascript",
-            src: "https://events.vercount.one/js"
-          )
+          html.link(rel: "icon", type: "image/png", href: "/assets/sigil-logo.png")
         })
 
         html.body({
@@ -196,7 +188,7 @@
 
 #let render-giscus(giscus-config) = context {
   if giscus-config == none {
-    ()
+    none
   } else {
     html-guard(() => {
       html.div(class: "post-comments", {
@@ -236,7 +228,7 @@
     "/assets/core/main.css",
   ),
   scripts: (
-    "/assets/core/render-code.js",
+    "/assets/code-copy.js",
     "/assets/core/theme.js",
     "/assets/core/post-nav-switch.js",
   ),
@@ -347,6 +339,7 @@
   description: "",
   website-url: query-input("website-url", default: none),
   author: query-input("author", default: none),
+  include-rss-link: true,
   content,
 ) = {
   typ2html-base(
@@ -362,7 +355,7 @@
     include-description-meta: true,
     website-url: website-url,
     author: author,
-    include-rss-link: true,
+    include-rss-link: include-rss-link,
     canonical-path: query-input("page-path", default: ""),
     date-meta: datetime.today(),
     head-extra: {
@@ -389,6 +382,7 @@
   author: query-input("author", default: none),
   tag-options: (:),
   giscus-config: none,
+  feed-enabled: true,
 
   post-css: (
     "/assets/core/font.css",
@@ -396,10 +390,9 @@
     "/assets/core/main.css",
   ),
   post-scripts: (
-    "/assets/core/render-code.js",
+    "/assets/code-copy.js",
     "/assets/core/theme.js",
     "/assets/core/post-nav-switch.js",
-    "/assets/core/giscus-theme.js",
   ),
 
   page-css: (
@@ -453,5 +446,6 @@
     description: description,
     website-url: website-url,
     author: author,
+    include-rss-link: feed-enabled,
   )
 )

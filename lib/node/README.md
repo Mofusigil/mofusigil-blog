@@ -6,16 +6,13 @@
 
 ```bash
 npm run build
-npm run build:force
 npm run build:fast
 npm run build:preview
-npm run build:full
 ```
 
 ## CLI Options
 
 - `-o, --out`：输出目录名（相对仓库根目录）
-- `-f, --force`：忽略时间戳，强制刷新所有编译和复制任务
 - `-j, --jobs`：Typst 并发编译进程数
 - `-h, --help`：显示帮助
 

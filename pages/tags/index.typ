@@ -14,7 +14,7 @@
 
 #show: template-page.with(
   title: "标签",
-  description: "标签页面",
+  description: "按 C++、分布式系统、算法竞赛与 AI 系统等主题浏览。",
 )
 
 #render-page-breadcrumb(items: (("/", "首页"),))

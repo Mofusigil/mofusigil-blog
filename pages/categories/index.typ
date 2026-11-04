@@ -16,7 +16,7 @@
 
 #show: template-page.with(
   title: "分类",
-  description: "分类页面",
+  description: "按项目实践、算法与竞赛、学习与思考浏览魔符sigil 的文字。",
 )
 
 #render-page-breadcrumb(items: (("/", "首页"),))

@@ -1,5 +1,5 @@
 {
-  "name": "carbon-typst-blog",
+  "name": "mofusigil-blog",
   "private": true,
   "devDependencies": {
     "esbuild": "^0.25.11"
@@ -8,6 +8,8 @@
     "build": "node lib/node/build-html.mjs",
     "build:fast": "npm run build -- --jobs 4",
     "build:preview": "npm run build -- --out _site-preview",
-    "build:preview_fast": "npm run build -- --jobs 4 --out _site-preview"
+    "build:preview_fast": "npm run build -- --jobs 4 --out _site-preview",
+    "preview": "node lib/node/preview.mjs",
+    "check": "node lib/node/check-site.mjs"
   }
 }
