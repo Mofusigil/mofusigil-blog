@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>魔符sigil</title>
+  <link>https://mofusigil.github.io/mofusigil-blog/</link>
+  <description>魔符sigil 的个人博客。记录算法竞赛、C++ 网络编程、分布式系统与 AI 系统的学习和实践。</description>
+  <language>zh-cn</language>
+  <lastBuildDate>Thu, 05 Nov 2026 00:00:00 GMT</lastBuildDate>
+  <item>
+    <title>从算法竞赛开始，练习把问题想清楚</title>
+    <link>https://mofusigil.github.io/mofusigil-blog/posts/algorithm-training/</link>
+    <guid isPermaLink="true">https://mofusigil.github.io/mofusigil-blog/posts/algorithm-training/</guid>
+    <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+    <description>回看 ICPC、CCPC 与校队训练，把竞赛经历连接到推导、实现和团队协作。</description>
+    <category domain="category">算法与竞赛</category>
+    <category domain="tag">算法竞赛</category>
+    <category domain="tag">随笔</category>
+  </item>
+  <item>
+    <title>C++ RPC：把一次远程调用串起来</title>
+    <link>https://mofusigil.github.io/mofusigil-blog/posts/rpc-system/</link>
+    <guid isPermaLink="true">https://mofusigil.github.io/mofusigil-blog/posts/rpc-system/</guid>
+    <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+    <description>从网络 I/O、消息协议到注册发现，整理一套 C++ 分布式 RPC 系统的模块与调用链路。</description>
+    <category domain="category">项目实践</category>
+    <category domain="tag">C++</category>
+    <category domain="tag">分布式系统</category>
+    <category domain="tag">网络编程</category>
+  </item>
+  <item>
+    <title>从系统编程出发，走近 AI 系统</title>
+    <link>https://mofusigil.github.io/mofusigil-blog/posts/systems-to-ai/</link>
+    <guid isPermaLink="true">https://mofusigil.github.io/mofusigil-blog/posts/systems-to-ai/</guid>
+    <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+    <description>把算法、C++ 项目与后端实践连接起来，整理下一阶段想探索的 AI 工程方向。</description>
+    <category domain="category">学习与思考</category>
+    <category domain="tag">AI 系统</category>
+    <category domain="tag">后端开发</category>
+    <category domain="tag">随笔</category>
+  </item>
+  <item>
+    <title>你好，这里是魔符sigil</title>
+    <link>https://mofusigil.github.io/mofusigil-blog/posts/welcome/</link>
+    <guid isPermaLink="true">https://mofusigil.github.io/mofusigil-blog/posts/welcome/</guid>
+    <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+    <description>给这本个人笔记写一个开头：记录算法、系统和动手实践，也给尚未想清楚的问题留一个位置。</description>
+    <category domain="category">学习与思考</category>
+    <category domain="tag">随笔</category>
+  </item>
+</channel>
+</rss>
