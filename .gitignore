@@ -1,5 +1,6 @@
 _site/
 _site-preview/
+_site-pages/
 .vscode/
 .typ-blog-cache/
 node_modules/

@@ -36,13 +36,30 @@ npm run preview
 
 `npm run check` 检查构建后的作者元数据、本地链接、原模板账号与追踪器残留，以及私密文档、手机号、邮箱和证件号码。它不能代替发布前对新增文字的人工检查。
 
-## 域名与发布
+## GitHub Pages 发布
 
-构建产物位于 `_site/`，可部署到任意静态网站托管平台。当前仅完成本地定制。
+本站的目标网址为 `https://mofusigil.github.io/mofusigil-blog/`。源码保存在 `main` 分支，编译后的网页保存在 `gh-pages` 分支。
 
-`site.config.json` 中的 `siteUrl` 为空，因此不会生成指向他人域名或示例域名的 canonical 链接，也暂不生成 RSS。填入自己的正式 HTTPS 域名后，重新构建即可自动生成 RSS 并显示订阅入口。
+首次发布前运行：
 
-自动构建配置保存在 `ci/github-actions-build.example.yml`，作为未启用的 GitHub Actions 模板。需要自动构建时，可将它复制到 `.github/workflows/build.yml` 后提交；该模板只构建、检查并上传静态产物。原作者的 Cloudflare 部署、评论仓库和访问统计均已移除。
+```sh
+npm run publish:pages
+```
+
+此命令编译 Typst，生成 `_site-pages/`，适配 `/mofusigil-blog/` 下的页面、图片、CSS、标签图标和导航，检查所有本地链接，再将静态产物推送到 `origin` 的 `gh-pages` 分支。它不会修改 `main` 工作区，也不会强制覆盖远程历史；发布提交使用公开昵称与 GitHub noreply 邮箱。
+
+首次启用：
+
+1. 打开仓库 **Settings → Pages**。
+2. 在 **Build and deployment → Source** 选择 **Deploy from a branch**。
+3. 选择 **gh-pages** 分支和 **/(root)**，点击 **Save**。
+4. 部署完成后，打开 `https://mofusigil.github.io/mofusigil-blog/`。
+
+以后修改文章或页面后，再运行 `npm run publish:pages` 即可更新。只上传 `main` 源码不会更新网页。
+
+如果只想生成静态文件而不推送，运行 `npm run build:pages`。`_site/` 仍用于普通本地预览，`_site-pages/` 用于 GitHub 项目网站。后者包含 `.nojekyll`，避免 GitHub 再用 Jekyll 处理已经编译好的文件。
+
+`site.config.json` 中的 `siteUrl` 控制 canonical 链接、RSS 与 GitHub Pages 项目路径；更换域名或仓库名后需要更新并重新发布。自动构建配置仍保存在 `ci/github-actions-build.example.yml`，是未启用的模板。当前的静态分支发布方式无需凭据拥有修改 Actions 工作流的权限。
 
 ## 来源
 

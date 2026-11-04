@@ -10,6 +10,8 @@
     "build:preview": "npm run build -- --out _site-preview",
     "build:preview_fast": "npm run build -- --jobs 4 --out _site-preview",
     "preview": "node lib/node/preview.mjs",
-    "check": "node lib/node/check-site.mjs"
+    "check": "node lib/node/check-site.mjs",
+    "build:pages": "npm run build:fast && node lib/node/export-pages.mjs && node lib/node/check-site.mjs _site-pages",
+    "publish:pages": "npm run build:pages && node lib/node/publish-pages.mjs"
   }
 }
