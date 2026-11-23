@@ -217,6 +217,7 @@ footer { padding: 2.7rem var(--page-padding-x) 1.3rem; background: var(--surface
 html[data-theme="gray-90"] .medal-label.gold { color: #d1b66b; }
 html[data-theme="gray-90"] .medal-label.bronze { color: #d1a37b; }
 .project-detail { border: 1px solid var(--rule); background: var(--surface-raised); padding: 2.2rem; border-radius: 4px; }
+.project-detail + .project-detail { margin-top: 1.5rem; }
 .project-detail-head { display: flex; justify-content: space-between; align-items: start; gap: 1.5rem; }
 .pages-container .project-detail-head h2 { font-size: 1.6rem; margin: .45rem 0 1rem; }
 .project-period { font-family: var(--font-mono-stack); font-size: .68rem; color: var(--text-secondary); white-space: nowrap; padding-top: .2rem; }

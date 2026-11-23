@@ -38,7 +38,14 @@
   })
 
   html.div(class: "profile-strip", {
-    html.div({ html.span(class: "strip-label", "学习 / STUDY"); html.span("湖南大学 · 计算机科学与技术") })
+    html.div({
+      html.span(class: "strip-label", "学习 / STUDY")
+      html.span({
+        "湖南大学 · 计算机科学与技术"
+        html.br()
+        "港中大（深圳）MAI（Agent）· 已录取"
+      })
+    })
     html.div({ html.span(class: "strip-label", "实践 / BUILD"); html.span("C++ · 网络编程 · 分布式系统") })
     html.div({ html.span(class: "strip-label", "关注 / EXPLORE"); html.span("后端工程 · AI 系统") })
   })
@@ -91,11 +98,17 @@
         })
         html.div(class: "path-item", {
           html.span(class: "path-index", "02")
-          html.div({ html.h3("后端与系统"); html.p("从 C++ RPC 项目到美团后端实习，理解网络、并发与服务之间的关系。") })
+          html.div({
+            html.h3("后端与系统")
+            html.p({ "做过 C++ RPC 项目，也在"; html.a(href: "/projects/#meituan-internship", "美团后端实习"); "期间为 Keemart 独立交付了商品价格尾数策略接口。" })
+          })
         })
         html.div(class: "path-item", {
           html.span(class: "path-index", "03")
-          html.div({ html.h3("走近 AI 系统"); html.p("带着系统编程的基础，继续学习模型部署、推理效率与工程实现。") })
+          html.div({
+            html.h3("走近 AI 系统")
+            html.p({ "本科毕设正在做"; html.a(href: "/projects/#graduation-project", "全双工语音对话模型推理优化"); "，关注实时语音交互中的推理效率。" })
+          })
         })
       })
     })
